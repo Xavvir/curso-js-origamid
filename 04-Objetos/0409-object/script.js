@@ -1,32 +1,29 @@
 // Crie uma função que verifique
 // corretamente o tipo de dado
-function verificarDado(dado) {
-  return Object.prototype.toString.call(dado);
-}
+const carros = ['Uno', 'Gol', 'Onix', 'Cruze']
 
-console.log(verificarDado('String'));
+console.log(Object.prototype.toString.call(carros));
 
 // Crie um objeto quadrado com
 // a propriedade lados e torne
 // ela imutável
-const quadrado = {};
-Object.defineProperties(quadrado, {
-  lados: {
-    value: 4,
-    enumerable: true,
-  }
-})
+const quadrado = {
+    lados: 4
+}
+const congelado = Object.freeze(quadrado)
 
-console.log(quadrado)
+quadrado.lados = 6
+
+function criarQuadrado (perimetro){
+    lados = quadrado.lados
+    return perimetro * lados
+}
+
+console.log(criarQuadrado(1))
 
 // Previna qualquer mudança
 // no objeto abaixo
-const configuracao = {
-  width: 800,
-  height: 600,
-  background: '#333'
-}
-Object.freeze(configuracao);
+
 
 // Liste o nome de todas
 // as propriedades do
