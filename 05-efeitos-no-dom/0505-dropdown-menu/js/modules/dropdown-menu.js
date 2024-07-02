@@ -8,6 +8,6 @@ export default function initDropdownMenu() {
 
   function handleClick(event) {
     event.preventDefault();
-    this.classList.add('active');
+    this.classList.toggle('active');
   };
 }
